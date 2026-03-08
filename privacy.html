@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - TackleBot</title>
+    <meta name="description" content="Review TackleBot's privacy policy, including what data is collected, how it is used, and how users can request deletion.">
 
     <!-- Open Graph / Link Preview -->
     <meta property="og:title" content="Privacy Policy - TackleBot">
@@ -15,23 +16,37 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="fishImages/Bass.png" type="image/png">
 </head>
-<body>
+<body class="page page-privacy">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
     <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="guide.html">Guide</a>
-        <a href="shop.html">Shop</a>
-        <a href="donate.html">Donate</a>
-        <a href="privacy.html" class="active">Privacy Policy</a>
-        <a href="tos.html">Terms of Service</a>
-    </nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+            <a class="brand-mark" href="index.html">TackleBot</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="guide.html">Guide</a>
+                <a href="shop.html">Shop</a>
+                <a href="donate.html">Donate</a>
+                <a href="privacy.html" class="active" aria-current="page">Privacy Policy</a>
+                <a href="tos.html">Terms of Service</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container text-content">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last Updated:</strong> June 9th, 2025</p>
+    <main id="main-content" class="container text-content legal-page">
+        <header class="page-intro page-intro-compact legal-header">
+            <p class="eyebrow">Policies and storage practices</p>
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated:</strong> June 9th, 2025</p>
+        </header>
 
         <h2>Introduction</h2>
         <p>This Privacy Policy outlines how TackleBot Discord Bot ("the Bot", "we", "us", "our") collects, uses, stores, and protects user data when you interact with our service. By using the Bot, you consent to the data practices described in this policy.</p>
@@ -146,9 +161,9 @@
         </ul>
 
         <p>By using TackleBot, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</p>
-    </div>
+    </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
     </footer>
 

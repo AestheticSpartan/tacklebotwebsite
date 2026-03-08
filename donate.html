@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - TackleBot</title>
+    <meta name="description" content="Support TackleBot development through Ko-fi or Patreon and unlock supporter rewards, early access perks, and custom fish content.">
 
     <!-- Open Graph / Link Preview -->
     <meta property="og:title" content="Donate - TackleBot">
@@ -15,32 +16,54 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="fishImages/Bass.png" type="image/png">
 </head>
-<body>
+<body class="page page-donate">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
     <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="guide.html">Guide</a>
-        <a href="shop.html">Shop</a>
-        <a href="donate.html" class="active">Donate</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="tos.html">Terms of Service</a>
-    </nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+            <a class="brand-mark" href="index.html">TackleBot</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="guide.html">Guide</a>
+                <a href="shop.html">Shop</a>
+                <a href="donate.html" class="active" aria-current="page">Donate</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tos.html">Terms of Service</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container">
-        <h1>Support TackleBot</h1>
-        <p class="tagline">Help keep the bot running and earn exclusive rewards!</p>
+    <main id="main-content" class="container">
+        <section class="page-intro page-intro-compact">
+            <p class="eyebrow">Keep the line in the water</p>
+            <h1>Support TackleBot</h1>
+            <p class="tagline">Help keep the bot running and earn exclusive rewards.</p>
+        </section>
 
-        <div class="btn-group">
-            <a href="https://ko-fi.com/thromblocreates" target="_blank" class="btn btn-primary">Support on Ko-fi</a>
-            <a href="https://www.patreon.com/c/thromblocreates" target="_blank" class="btn btn-secondary">Support on Patreon</a>
-        </div>
+        <section class="content-section content-section-tight">
+            <div class="btn-group support-actions">
+                <a href="https://ko-fi.com/thromblocreates" target="_blank" rel="noopener" class="btn btn-primary">Support on Ko-fi</a>
+                <a href="https://www.patreon.com/c/thromblocreates" target="_blank" rel="noopener" class="btn btn-secondary">Support on Patreon</a>
+            </div>
+        </section>
 
-        <div class="donation-grid">
-            <!-- Basic Supporter -->
-            <div class="donation-card">
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="eyebrow">Supporter tiers</p>
+                <h2>Choose how deep you want to back development</h2>
+                <p>Every tier helps keep updates, events, and new content moving while giving supporters a few meaningful extras in return.</p>
+            </div>
+
+            <div class="donation-grid">
+            <article class="donation-card">
                 <h3>Basic Supporter</h3>
                 <div class="price">$1+ / month</div>
                 <ul class="perks">
@@ -48,10 +71,9 @@
                     <li>Access to supporter-only channels</li>
                     <li>Special role in the Bot server</li>
                 </ul>
-            </div>
+            </article>
 
-            <!-- Premium Supporter -->
-            <div class="donation-card">
+            <article class="donation-card donation-card-featured">
                 <h3>Premium Supporter</h3>
                 <div class="price">$3 / month</div>
                 <ul class="perks">
@@ -60,10 +82,9 @@
                     <li>Access to future and test builds</li>
                     <li>Name added to credits</li>
                 </ul>
-            </div>
+            </article>
 
-            <!-- Ultra Supporter -->
-            <div class="donation-card">
+            <article class="donation-card">
                 <h3>Ultra Supporter</h3>
                 <div class="price">$5 / month</div>
                 <ul class="perks">
@@ -72,11 +93,12 @@
                     <li>Special channel for direct feedback</li>
                     <li>Sneak-peeks at upcoming features</li>
                 </ul>
+            </article>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
     </footer>
 

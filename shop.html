@@ -4,34 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TackleBot Shop - Buy Weird Fish Stuff</title>
+    <meta name="description" content="Browse TackleBot's rotating fish market and themed shop inventory full of odd tackle, cursed items, and rare finds.">
+    <meta property="og:title" content="TackleBot Shop - Buy Weird Fish Stuff">
+    <meta property="og:description" content="Browse the TackleBot fish market for strange tackle, oddities, and rare shop drops.">
+    <meta property="og:image" content="https://dryram3n.github.io/tacklebotwebsite/fishImages/TackleBotBanner2.jpeg">
+    <meta property="og:url" content="https://dryram3n.github.io/tacklebotwebsite/shop.html">
+    <meta name="twitter:card" content="summary_large_image">
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="fishImages/Bass.png" type="image/png">
 </head>
-<body>
+<body class="page page-shop">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
     <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="guide.html">Guide</a>
-        <a href="shop.html" class="active">Shop</a>
-        <a href="donate.html">Donate</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="tos.html">Terms of Service</a>
-    </nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+            <a class="brand-mark" href="index.html">TackleBot</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="guide.html">Guide</a>
+                <a href="shop.html" class="active" aria-current="page">Shop</a>
+                <a href="donate.html">Donate</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tos.html">Terms of Service</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container" id="shop-container">
-        <h1 id="shop-title">The Fish Market</h1>
-        <p class="tagline" id="shop-tagline">Currency accepted: Coins, Dabloons, and LP (Liquid Pizza?)</p>
+    <main id="main-content" class="container shop-container">
+        <section class="page-intro page-intro-compact">
+            <p class="eyebrow">Night market inventory</p>
+            <h1 id="shop-title">The Fish Market</h1>
+            <p class="tagline" id="shop-tagline">Currency accepted: Coins, Dabloons, and LP (Liquid Pizza?)</p>
+        </section>
         
-        <div id="shop-items" class="shop-grid">
+        <section class="content-section content-section-tight">
+        <div id="shop-items" class="shop-grid" aria-live="polite">
             <!-- Items will be injected here by script.js -->
         </div>
-    </div>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
     </footer>
 

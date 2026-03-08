@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - TackleBot</title>
+    <meta name="description" content="Read the TackleBot terms of service covering acceptable use, third-party services, data practices, and account restrictions.">
 
     <!-- Open Graph / Link Preview -->
     <meta property="og:title" content="Terms of Service - TackleBot">
@@ -15,23 +16,37 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="fishImages/Bass.png" type="image/png">
 </head>
-<body>
+<body class="page page-tos">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
     <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="guide.html">Guide</a>
-        <a href="shop.html">Shop</a>
-        <a href="donate.html">Donate</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="tos.html" class="active">Terms of Service</a>
-    </nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+            <a class="brand-mark" href="index.html">TackleBot</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="guide.html">Guide</a>
+                <a href="shop.html">Shop</a>
+                <a href="donate.html">Donate</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tos.html" class="active" aria-current="page">Terms of Service</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container text-content">
-        <h1>Terms of Service</h1>
-        <p><strong>Last Updated:</strong> June 9th, 2025</p>
+    <main id="main-content" class="container text-content legal-page">
+        <header class="page-intro page-intro-compact legal-header">
+            <p class="eyebrow">Rules for using the bot</p>
+            <h1>Terms of Service</h1>
+            <p><strong>Last Updated:</strong> June 9th, 2025</p>
+        </header>
 
         <h2>1. Introduction</h2>
         <p>By adding or interacting with the TackleBot Discord Bot ("the Bot", "we", "us", "our") in a Discord server or via direct message, you agree to comply with these Terms of Service ("Terms") and our Privacy Policy. These Terms govern your access to and use of the Bot, including all features, commands, updates, and related services.</p>
@@ -98,9 +113,9 @@
 
         <h2>12. Contact</h2>
         <p>For questions about these Terms or the Bot's operation, please contact Thromblo and the development team through the official support server (linked via <code>/info</code> or <code>/help</code>) or visit <a href="https://dryram3n.github.io/tacklebotwebsite" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite</a>.</p>
-    </div>
+    </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
     </footer>
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TackleBot - The Ultimate Discord Fishing Experience</title>
+    <meta name="description" content="TackleBot brings deep fishing progression, rare catches, boss battles, and a full in-server economy to Discord communities.">
     
     <!-- Open Graph / Link Preview -->
     <meta property="og:title" content="TackleBot - The Ultimate Discord Fishing Experience">
@@ -15,61 +16,81 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="fishImages/Bass.png" type="image/png">
 </head>
-<body>
+<body class="page page-home">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
     <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="guide.html">Guide</a>
-        <a href="shop.html">Shop</a>
-        <a href="donate.html">Donate</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="tos.html">Terms of Service</a>
-    </nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+            <a class="brand-mark" href="index.html">TackleBot</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="active" aria-current="page">Home</a>
+                <a href="guide.html">Guide</a>
+                <a href="shop.html">Shop</a>
+                <a href="donate.html">Donate</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tos.html">Terms of Service</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container">
-        <div class="hero">
+    <main id="main-content" class="container">
+        <section class="hero hero-home">
+            <p class="eyebrow">Discord fishing, rebuilt to feel alive</p>
             <h1>TackleBot</h1>
             <p class="tagline">Cast your line, catch rare fish, and build your fishing empire directly in Discord!</p>
             
             <div class="btn-group">
-                <a href="https://discord.com/oauth2/authorize?client_id=1354018504470298624&permissions=8&scope=bot%20applications.commands" target="_blank" class="btn btn-primary">Invite Bot</a>
-                <a href="https://discord.gg/TKqYnW4k29" target="_blank" class="btn btn-secondary">Join Support Server</a>
-                <a href="https://top.gg/bot/1354018504470298624" target="_blank" class="btn btn-secondary">Vote on Top.gg</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1354018504470298624&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener" class="btn btn-primary">Invite Bot</a>
+                <a href="https://discord.gg/TKqYnW4k29" target="_blank" rel="noopener" class="btn btn-secondary">Join Support Server</a>
+                <a href="https://top.gg/bot/1354018504470298624" target="_blank" rel="noopener" class="btn btn-secondary">Vote on Top.gg</a>
             </div>
-        </div>
+        </section>
 
-        <div class="features">
-            <div class="feature-card">
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="eyebrow">Why it lands</p>
+                <h2>Systems built for long-running servers</h2>
+                <p>Every loop is designed to give players something to chase, whether they want rare fish, passive income, or group progression.</p>
+            </div>
+
+            <div class="features">
+            <article class="feature-card">
                 <h3>🎣 Advanced Fishing</h3>
                 <p>Explore over 15 unique locations like the Deep Ocean and Cosmic Sea. Catch hundreds of unique fish species!</p>
-            </div>
-            <div class="feature-card">
+            </article>
+            <article class="feature-card">
                 <h3>💰 Dynamic Economy</h3>
                 <p>Manage your bank, invest in fishing boats, and run your own market. Become the wealthiest fisher!</p>
-            </div>
-            <div class="feature-card">
+            </article>
+            <article class="feature-card">
                 <h3>⚔️ Boss Battles</h3>
                 <p>Team up with your server to defeat massive bosses like the Kraken and earn legendary rewards.</p>
-            </div>
-            <div class="feature-card">
+            </article>
+            <article class="feature-card">
                 <h3>🐶 Pet System</h3>
                 <p>Hatch and raise pets that accompany you on your journey and provide powerful bonuses.</p>
-            </div>
-            <div class="feature-card">
+            </article>
+            <article class="feature-card">
                 <h3>🏢 Business Empire</h3>
                 <p>Build aquariums and manage fleets to generate passive income. Turn your catch into a thriving business.</p>
-            </div>
-            <div class="feature-card">
+            </article>
+            <article class="feature-card">
                 <h3>📈 Progression</h3>
                 <p>Level up, unlock achievements, and climb the global leaderboards. Master the art of fishing!</p>
+            </article>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
     </footer>
 

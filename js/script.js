@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    initFishTank();
+    initNavigation();
     highlightActiveTab();
+    initScrollNavbar();
+    initFishTank();
     initGlitchEffects();
     initShop();
-    initScrollNavbar();
     initEasterEggs();
+    window.addEventListener('pagehide', cleanupRuntime, { once: true });
 });
 
 const PAGE_THEME_MAP = {
@@ -18,6 +20,42 @@ const PAGE_THEME_MAP = {
 };
 
 const DEFAULT_THEME = 'prime';
+const CURRENT_PAGE = getCurrentPage();
+const NAV_BREAKPOINT = 820;
+const REDUCED_MOTION_QUERY = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+const PAGE_RUNTIME_CONFIG = {
+    'index.html': {
+        glitch: { enabled: true, subliminalInterval: 9000, headingInterval: 6500, invertInterval: 15000 },
+        fish: { initialCount: 5, desktopMax: 12, mobileMax: 6, bubbleInterval: 850, fishSpawnInterval: 3200, opacity: 0.72 },
+        easterEggChanceMultiplier: 1
+    },
+    'guide.html': {
+        glitch: { enabled: true, subliminalInterval: 12000, headingInterval: 9000, invertInterval: 20000 },
+        fish: { initialCount: 3, desktopMax: 7, mobileMax: 4, bubbleInterval: 1200, fishSpawnInterval: 5000, opacity: 0.52 },
+        easterEggChanceMultiplier: 0.8
+    },
+    'shop.html': {
+        glitch: { enabled: true, subliminalInterval: 8500, headingInterval: 5500, invertInterval: 14000 },
+        fish: { initialCount: 4, desktopMax: 10, mobileMax: 5, bubbleInterval: 900, fishSpawnInterval: 3600, opacity: 0.66 },
+        easterEggChanceMultiplier: 1
+    },
+    'donate.html': {
+        glitch: { enabled: true, subliminalInterval: 13000, headingInterval: 10000, invertInterval: 22000 },
+        fish: { initialCount: 3, desktopMax: 6, mobileMax: 3, bubbleInterval: 1300, fishSpawnInterval: 5200, opacity: 0.45 },
+        easterEggChanceMultiplier: 0.75
+    },
+    'privacy.html': {
+        glitch: { enabled: false, subliminalInterval: 0, headingInterval: 0, invertInterval: 0 },
+        fish: { initialCount: 1, desktopMax: 2, mobileMax: 1, bubbleInterval: 2000, fishSpawnInterval: 9000, opacity: 0.22 },
+        easterEggChanceMultiplier: 0.35
+    },
+    'tos.html': {
+        glitch: { enabled: false, subliminalInterval: 0, headingInterval: 0, invertInterval: 0 },
+        fish: { initialCount: 1, desktopMax: 2, mobileMax: 1, bubbleInterval: 2000, fishSpawnInterval: 9000, opacity: 0.22 },
+        easterEggChanceMultiplier: 0.35
+    }
+};
 
 const EASTER_EGG_CONFIG = {
     chance: 0.18,
@@ -29,6 +67,12 @@ const EASTER_EGG_CONFIG = {
 const easterEggState = {
     overlay: null,
     textInterval: null
+};
+
+const runtimeState = {
+    intervals: [],
+    timeouts: [],
+    menuOpen: false
 };
 
 const FISH_ART_LIBRARY = [
@@ -416,6 +460,7 @@ function initGlitchEffects() {
     const subliminalLayer = document.getElementById('subliminal-layer');
     const subliminalText = document.getElementById('subliminal-text');
     const body = document.body;
+    const runtimeConfig = getPageRuntimeConfig();
     
     // Safety check: if elements don't exist, don't run the effects
     if (!subliminalLayer || !subliminalText) return;
@@ -430,6 +475,8 @@ function initGlitchEffects() {
     body.setAttribute('data-theme', theme);
     body.dataset.activeTheme = theme;
 
+    if (REDUCED_MOTION_QUERY.matches || !runtimeConfig.glitch.enabled) return;
+
     const headings = document.querySelectorAll('h1, h2, h3, .btn');
     headings.forEach(heading => {
         if (!heading.hasAttribute('data-base-text')) {
@@ -438,8 +485,7 @@ function initGlitchEffects() {
         }
     });
 
-    // Subliminal Messages
-    setInterval(() => {
+    registerInterval(() => {
         if (Math.random() > 0.7) { // 30% chance every check
             const phrase = phrases[Math.floor(Math.random() * phrases.length)];
             subliminalText.innerText = phrase;
@@ -455,14 +501,13 @@ function initGlitchEffects() {
                 duration = Math.random() * 150 + 50;
             }
             
-            setTimeout(() => {
+            registerTimeout(() => {
                 subliminalLayer.style.opacity = '0';
             }, duration);
         }
-    }, 8000); // Check every 8 seconds
+    }, runtimeConfig.glitch.subliminalInterval);
 
-    // Text Glitch on Headings
-    setInterval(() => {
+    registerInterval(() => {
         if (headings.length && Math.random() > 0.7) {
             const target = headings[Math.floor(Math.random() * headings.length)];
             const originalText = target.innerText;
@@ -473,92 +518,98 @@ function initGlitchEffects() {
             target.dataset.glitchTheme = theme;
             target.classList.add('glitch-active', glitchClass);
             
-            setTimeout(() => {
+            registerTimeout(() => {
                 target.classList.remove('glitch-active', glitchClass);
                 const baseText = target.getAttribute('data-base-text') || originalText;
                 target.setAttribute('data-text', baseText);
                 target.removeAttribute('data-glitch-theme');
             }, Math.random() * 500 + 200);
         }
-    }, 5000);
+    }, runtimeConfig.glitch.headingInterval);
 
-    // Color Inversion Flash
-    setInterval(() => {
+    registerInterval(() => {
         if (Math.random() > 0.95) { // Rare event
             body.classList.add('color-invert');
-            setTimeout(() => {
+            registerTimeout(() => {
                 body.classList.remove('color-invert');
             }, 100); // Very quick flash
         }
-    }, 12000);
+    }, runtimeConfig.glitch.invertInterval);
 }
 
 function highlightActiveTab() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+        if (linkPath === CURRENT_PAGE || (CURRENT_PAGE === '' && linkPath === 'index.html')) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
         }
     });
 }
 
 function initScrollNavbar() {
-    const nav = document.querySelector('nav');
-    if (!nav) return;
+    const header = document.querySelector('.site-header');
+    if (!header) return;
 
-    let lastScrollTop = 0;
-    let scrollThreshold = 100; // Start hiding after scrolling 100px
+    let lastScrollTop = window.scrollY || 0;
+    let isTicking = false;
+
+    const updateHeader = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const isDesktop = window.innerWidth > NAV_BREAKPOINT;
+        const scrollingDown = scrollTop > lastScrollTop + 6;
+        const pastThreshold = scrollTop > 160;
+
+        if (isDesktop && pastThreshold && scrollingDown && !runtimeState.menuOpen) {
+            header.classList.add('nav-hidden');
+        } else {
+            header.classList.remove('nav-hidden');
+        }
+
+        lastScrollTop = Math.max(scrollTop, 0);
+        isTicking = false;
+    };
 
     window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Only hide/show if we've scrolled past the threshold
-        if (scrollTop > scrollThreshold) {
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down - hide nav
-                nav.classList.add('nav-hidden');
-            } else {
-                // Scrolling up - show nav
-                nav.classList.remove('nav-hidden');
-            }
-        } else {
-            // At top of page - always show nav
-            nav.classList.remove('nav-hidden');
+        if (!isTicking) {
+            window.requestAnimationFrame(updateHeader);
+            isTicking = true;
         }
-        
-        lastScrollTop = scrollTop;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        header.classList.remove('nav-hidden');
     });
 }
 
 function initFishTank() {
     const tank = document.getElementById('fish-tank');
-    if (!tank) return;
+    const runtimeConfig = getPageRuntimeConfig();
+    if (!tank || REDUCED_MOTION_QUERY.matches) return;
 
-    // Fish configuration
     const fishImages = FISH_ART_LIBRARY;
+    const fishConfig = runtimeConfig.fish;
 
-    // Spawn bubbles
-    setInterval(() => {
+    registerInterval(() => {
         createBubble(tank);
-    }, 500);
+    }, fishConfig.bubbleInterval);
 
-    // Spawn fish
-    // Initial population
-    for(let i = 0; i < 5; i++) {
-        createFish(tank, fishImages, true);
+    for (let i = 0; i < fishConfig.initialCount; i++) {
+        createFish(tank, fishImages, true, fishConfig);
     }
 
-    // Ongoing spawning
-    setInterval(() => {
+    registerInterval(() => {
         const isMobile = window.innerWidth < 768;
-        const maxFish = isMobile ? 8 : 15;
+        const maxFish = isMobile ? fishConfig.mobileMax : fishConfig.desktopMax;
         if (document.querySelectorAll('.fish').length < maxFish) {
-            createFish(tank, fishImages, false);
+            createFish(tank, fishImages, false, fishConfig);
         }
-    }, 3000);
+    }, fishConfig.fishSpawnInterval);
 }
 
 function createBubble(container) {
@@ -573,17 +624,22 @@ function createBubble(container) {
     
     container.appendChild(bubble);
 
-    // Remove after animation
-    setTimeout(() => {
+    registerTimeout(() => {
         bubble.remove();
     }, 10000);
 }
 
-function createFish(container, images, randomX) {
+function createFish(container, images, randomX, fishConfig) {
     const fish = document.createElement('img');
     const randomImage = images[Math.floor(Math.random() * images.length)];
     fish.src = `fishImages/${randomImage}`;
     fish.classList.add('fish');
+    fish.loading = 'lazy';
+    fish.decoding = 'async';
+    fish.style.opacity = fishConfig.opacity;
+    fish.addEventListener('error', () => {
+        fish.remove();
+    }, { once: true });
 
     // Random properties
     const direction = Math.random() > 0.5 ? 'right' : 'left';
@@ -598,44 +654,29 @@ function createFish(container, images, randomX) {
     fish.style.top = `${topPos}vh`;
     fish.style.width = `${size}px`;
     
-    // Set direction and animation
     if (direction === 'right') {
         fish.style.animation = `swimRight ${duration}s linear forwards`;
-        // If image faces left by default, we might need to flip it. 
-        // Assuming images face left (standard for fish sprites usually), 
-        // if they swim right, we flip them horizontally.
-        // Let's assume standard orientation is facing LEFT.
-        // If they swim RIGHT, we need transform: scaleX(-1).
-        // If they swim LEFT, we need transform: scaleX(1).
-        // Wait, usually sprites face RIGHT or LEFT. Let's assume they face LEFT.
-        // If they swim RIGHT (left -> right), they should face RIGHT. So flip.
         fish.style.transform = 'scaleX(-1)'; 
     } else {
         fish.style.animation = `swimLeft ${duration}s linear forwards`;
         fish.style.transform = 'scaleX(1)';
     }
 
-    // Random starting X for initial population
     if (randomX) {
         const startX = Math.random() * 100;
         fish.style.left = `${startX}vw`;
-        // Adjust animation to handle mid-screen start? 
-        // CSS animation usually resets position. 
-        // For simplicity, initial fish just use static position and maybe a different animation or just let them start from edge for now to avoid complexity.
-        // Actually, let's just let them swim from edges for simplicity.
         fish.style.left = direction === 'right' ? '-150px' : '100vw';
     }
 
     container.appendChild(fish);
 
-    // Remove after animation
-    setTimeout(() => {
+    registerTimeout(() => {
         fish.remove();
     }, duration * 1000);
 }
 
 function initShop() {
-    const shopContainer = document.getElementById('shop-container');
+    const shopContainer = document.getElementById('shop-container') || document.querySelector('.shop-container') || document.getElementById('main-content');
     const shopItemsContainer = document.getElementById('shop-items');
     const shopTitle = document.getElementById('shop-title');
     const shopTagline = document.getElementById('shop-tagline');
@@ -648,6 +689,16 @@ function initShop() {
     const shopConfig = (themeConfig && themeConfig.shop) ? themeConfig.shop : fallbackShop;
 
     if (!shopConfig) return;
+
+    if (shopItemsContainer.dataset.shopBound !== 'true') {
+        shopItemsContainer.addEventListener('click', event => {
+            const button = event.target.closest('.buy-btn');
+            if (!button) return;
+            const currency = button.dataset.currency || 'coins';
+            window.alert(`ERROR: INSUFFICIENT ${currency.toUpperCase()}`);
+        });
+        shopItemsContainer.dataset.shopBound = 'true';
+    }
 
     if (shopTitle && shopConfig.title) {
         shopTitle.innerText = shopConfig.title;
@@ -667,6 +718,9 @@ function initShop() {
     const itemCount = randomBetween(countRange[0], countRange[1]);
     const glitchChance = typeof shopConfig.glitchChance === 'number' ? shopConfig.glitchChance : 0.05;
     const priceRange = shopConfig.priceRange || [25, 1000];
+    const fragment = document.createDocumentFragment();
+
+    shopItemsContainer.innerHTML = '';
 
     for (let i = 0; i < itemCount; i++) {
         const item = document.createElement('div');
@@ -704,16 +758,26 @@ function initShop() {
             <div class="price">${price} <span class="currency">${currency}</span></div>
             ${sigil ? `<div class="sigil">${sigil}</div>` : ''}
             ${note ? `<p class="note">${note}</p>` : ''}
-            <button class="buy-btn" onclick="alert('ERROR: INSUFFICIENT ${currency.toUpperCase()}')">BUY NOW</button>
+            <button class="buy-btn" type="button" data-currency="${currency}">Buy Now</button>
         `;
 
-        shopItemsContainer.appendChild(item);
+        const itemImage = item.querySelector('img');
+        if (itemImage) {
+            itemImage.loading = 'lazy';
+            itemImage.decoding = 'async';
+            itemImage.addEventListener('error', () => {
+                itemImage.remove();
+            }, { once: true });
+        }
+
+        fragment.appendChild(item);
     }
+
+    shopItemsContainer.appendChild(fragment);
 }
 
 function getCurrentPageTheme() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    return PAGE_THEME_MAP[currentPath] || PAGE_THEME_MAP[''] || DEFAULT_THEME;
+    return PAGE_THEME_MAP[CURRENT_PAGE] || PAGE_THEME_MAP[''] || DEFAULT_THEME;
 }
 
 function getThemeConfig(themeName) {
@@ -776,9 +840,11 @@ function getRandom(array) {
 }
 
 function initEasterEggs() {
-    if (Math.random() > EASTER_EGG_CONFIG.chance) return;
+    const runtimeConfig = getPageRuntimeConfig();
+    const chance = EASTER_EGG_CONFIG.chance * (runtimeConfig.easterEggChanceMultiplier || 1);
+    if (REDUCED_MOTION_QUERY.matches || Math.random() > chance) return;
     const target = getEasterEggTarget();
-    if (!target) return;
+    if (!target || target.querySelector('.easter-egg-prompt')) return;
     target.classList.add('easter-egg-zone');
     createEasterEggPrompt(target);
 }
@@ -787,13 +853,12 @@ function getEasterEggTarget() {
     const selectorsByPage = {
         'index.html': ['.hero', '.features'],
         'guide.html': ['.guide-card', '.guide-toc'],
-        'shop.html': ['#shop-container'],
+        'shop.html': ['#shop-container', '#main-content'],
         'donate.html': ['.donation-grid', '.btn-group'],
         'privacy.html': ['.text-content'],
         'tos.html': ['.text-content']
     };
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const selectors = selectorsByPage[currentPath] || [];
+    const selectors = selectorsByPage[CURRENT_PAGE] || [];
     selectors.push('.content-wrapper', '.container');
     for (const selector of selectors) {
         const candidate = document.querySelector(selector);
@@ -809,6 +874,7 @@ function createEasterEggPrompt(target) {
     const prompt = document.createElement('button');
     prompt.type = 'button';
     prompt.className = 'easter-egg-prompt';
+    prompt.setAttribute('aria-label', 'Open secret portal');
     prompt.style.setProperty('--prompt-top', `${Math.random() * 60 + 10}%`);
     prompt.style.setProperty('--prompt-left', `${Math.random() * 60 + 10}%`);
     prompt.innerHTML = `
@@ -873,4 +939,71 @@ function stopEasterEggSequence() {
         easterEggState.overlay = null;
     }
     document.body.classList.remove('easter-egg-active');
+}
+
+function initNavigation() {
+    const body = document.body;
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (!toggle || !navLinks) return;
+
+    const setMenuState = shouldOpen => {
+        runtimeState.menuOpen = shouldOpen;
+        body.classList.toggle('nav-open', shouldOpen);
+        toggle.setAttribute('aria-expanded', String(shouldOpen));
+    };
+
+    toggle.addEventListener('click', () => {
+        setMenuState(!body.classList.contains('nav-open'));
+    });
+
+    navLinks.addEventListener('click', event => {
+        if (event.target.closest('a')) {
+            setMenuState(false);
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > NAV_BREAKPOINT) {
+            setMenuState(false);
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        setMenuState(false);
+        stopEasterEggSequence();
+    });
+}
+
+function getCurrentPage() {
+    return window.location.pathname.split('/').pop() || 'index.html';
+}
+
+function getPageRuntimeConfig() {
+    return PAGE_RUNTIME_CONFIG[CURRENT_PAGE] || PAGE_RUNTIME_CONFIG['index.html'];
+}
+
+function registerInterval(callback, delay) {
+    const intervalId = window.setInterval(callback, delay);
+    runtimeState.intervals.push(intervalId);
+    return intervalId;
+}
+
+function registerTimeout(callback, delay) {
+    const timeoutId = window.setTimeout(() => {
+        runtimeState.timeouts = runtimeState.timeouts.filter(id => id !== timeoutId);
+        callback();
+    }, delay);
+    runtimeState.timeouts.push(timeoutId);
+    return timeoutId;
+}
+
+function cleanupRuntime() {
+    runtimeState.intervals.forEach(intervalId => clearInterval(intervalId));
+    runtimeState.timeouts.forEach(timeoutId => clearTimeout(timeoutId));
+    runtimeState.intervals = [];
+    runtimeState.timeouts = [];
+    stopEasterEggSequence();
 }
