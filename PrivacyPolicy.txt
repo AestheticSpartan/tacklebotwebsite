@@ -1,10 +1,13 @@
 Privacy Policy for TackleBot Discord Bot
-Created by Thromblo
+Created by ThrombloCreates
 
 Introduction
-This Privacy Policy outlines how TackleBot Discord Bot ("the Bot", "we", "us", "our") collects, uses, stores, and protects user data when you interact with our service. By using the Bot, you consent to the data practices described in this policy.
+This Privacy Policy outlines how TackleBot Discord Bot ("the Bot", "we", "us", "our") collects, uses, stores, and protects user data when you interact with our service. **Ownership Notice:** TackleBot is owned and operated by **AestheticSpartan** under the **ThrombloCreates** brand, with **Thromblo** continuing as an active contributor. By using the Bot, you consent to the data practices described in this policy.
 
-Last Updated: June 9, 2025
+Last Updated: May 16, 2026
+
+Ownership & Maintenance
+As of May 16, 2026, TackleBot is owned by **AestheticSpartan**. All source code, products, and intellectual property of the Bot are held under the **ThrombloCreates** brand. **Thromblo** continues as an active contributor to ongoing development and maintenance. For the purposes of this policy, data controller responsibilities sit with **ThrombloCreates / AestheticSpartan**.
 
 Data Collection
 Information We Collect
@@ -94,18 +97,18 @@ Data Deletion
 *   Server administrators can disable logging (`/log disable`) which stops future event logging and removes the stored log channel configuration.
 
 AI in Development and Service Enhancement
-To aid in the development, maintenance, and improvement of TackleBot, we leverage artificial intelligence (AI) tools and models from various providers, which may include Google (e.g., Gemini models) and Anthropic. These technologies are primarily used for:
-*   **Software Development:** Assisting with code generation, analysis, and optimization for the Bot's codebase.
+To aid in the development, maintenance, and improvement of TackleBot, **ThrombloCreates** leverages artificial intelligence (AI) tools and models from multiple providers, including **Anthropic (Claude)** and **Moonshot AI (Kimi)**, as well as Google (e.g., Gemini models). These technologies are primarily used for:
+*   **Software Development:** Assisting with code generation, analysis, refactoring, and optimization for the Bot's codebase.
 *   **Operational Support:** Helping to create documentation, identify areas for service improvement, or generate non-user-specific content.
 
-The use of AI for these internal purposes is aimed at enhancing the quality and efficiency of the Bot. Any AI-powered features that directly process user data, such as the `/summary` command's use of Google Gemini, are explicitly detailed within the 'Data Collection' and 'Third-Party Services' sections of this policy.
+Any code, assets, or other deliverables produced with AI assistance for the Bot remain the intellectual property of **ThrombloCreates**. The use of AI for these internal purposes is aimed at enhancing the quality and efficiency of the Bot. Any AI-powered features that directly process user data, such as the `/summary` command's use of Google Gemini, are explicitly detailed within the 'Data Collection' and 'Third-Party Services' sections of this policy.
 
 
 Changes to This Policy
 We may update this Privacy Policy from time to time. We will notify users of any significant changes by updating the "Last Updated" date of this policy, and potentially through in-Bot announcements (`/announce`).
 
 Contact Information
-For questions about this Privacy Policy or your data, please contact the development team, led by Thromblo, through:
+For questions about this Privacy Policy or your data, please contact the **ThrombloCreates development team, led by AestheticSpartan (with continued contributions from Thromblo)**, through:
 
 *   The official Bot support server (link usually available via `/info` or `/help`).
 *   Our website: https://dryram3n.github.io/tacklebotwebsite/privacy-policy.html
