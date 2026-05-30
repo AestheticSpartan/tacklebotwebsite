@@ -1368,23 +1368,26 @@ body.easter-egg-active {
 /* ---- Cross-promo corner ribbon (top-left, links to AestherBot) ---- */
 .corner-ribbon {
     position: fixed;
-    top: 36px;
-    left: -62px;
-    width: 260px;
+    top: 58px;
+    left: -86px;
+    width: 300px;
     transform: rotate(-45deg);
     z-index: 200;
+    display: block;
     text-align: center;
-    padding: 8px 0;
-    font-family: 'GlitchFont', monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
+    padding: 10px 0;
     text-decoration: none;
-    color: #072030;
+    color: #160a02;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-strong));
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-    transition: filter 0.2s ease;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+    font-family: 'GlitchFont', monospace;
+    line-height: 1.2;
 }
+.corner-ribbon .cr-top { display: block; font-size: 0.72rem; font-weight: 700; opacity: 0.82; }
+.corner-ribbon .cr-main { display: block; font-size: 0.98rem; font-weight: 800; letter-spacing: 0.02em; }
 .corner-ribbon:hover { filter: brightness(1.08); }
 .corner-ribbon:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* hide on narrow screens; on mid widths shift the nav brand clear of the ribbon */
 @media (max-width: 1280px) { .corner-ribbon { display: none; } }
+@media (min-width: 1281px) and (max-width: 1600px) { .site-nav { padding-left: 185px; } }
