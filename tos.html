@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - TackleBot</title>
-    <meta name="description" content="Read the TackleBot terms of service covering acceptable use, third-party services, data practices, and account restrictions.">
+    <meta name="description" content="Read the TackleBot terms of service covering acceptable use, third-party services, data practices, payments, and account restrictions.">
 
     <!-- Open Graph / Link Preview -->
     <meta property="og:title" content="Terms of Service - TackleBot">
@@ -19,7 +19,6 @@
 <body class="page page-tos">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
-    <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
     <header class="site-header">
@@ -45,103 +44,95 @@
         <header class="page-intro page-intro-compact legal-header">
             <p class="eyebrow">Rules for using the bot</p>
             <h1>Terms of Service</h1>
-            <p><strong>Last Updated:</strong> May 16, 2026</p>
+            <p><strong>Last Updated:</strong> May 28, 2026</p>
         </header>
 
-        <p style="font-weight: bold;"><strong>Ownership Notice:</strong> TackleBot is now owned and operated by <strong>AestheticSpartan</strong> under the <strong>ThrombloCreates</strong> brand. <strong>Thromblo</strong> remains an active contributor to the project. See Section 2 for full details.</p>
+        <p style="font-weight: bold;"><strong>Ownership Notice:</strong> TackleBot is owned and operated by <strong>AestheticSpartan</strong>. See Section 2 for full details.</p>
 
         <h2>1. Introduction</h2>
-        <p>By adding or interacting with the TackleBot Discord Bot ("the Bot", "we", "us", "our"), operated by AestheticSpartan under the ThrombloCreates brand, in a Discord server or via direct message, you agree to comply with these Terms of Service ("Terms") and our Privacy Policy. These Terms govern your access to and use of the Bot, including all features, commands, updates, and related services.</p>
-        <p>Visit our website for more information: <a href="https://dryram3n.github.io/tacklebotwebsite/terms-of-service.html" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite/terms-of-service.html</a></p>
+        <p>By adding or interacting with the TackleBot Discord Bot ("the Bot", "TackleBot", "we", "us", "our"), operated by AestheticSpartan, in a Discord server or via direct message, you agree to comply with these Terms of Service ("Terms") and our Privacy Policy. These Terms govern your access to and use of the Bot, including all features, commands, updates, and related services.</p>
+        <p>Visit our website for more information: <a href="https://dryram3n.github.io/tacklebotwebsite/" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite/</a></p>
 
-        <h2>2. Ownership & Maintenance</h2>
-        <p>As of May 16, 2026, TackleBot is owned by <strong>AestheticSpartan</strong>. All source code, products, assets, and intellectual property related to the Bot are held under the <strong>ThrombloCreates</strong> brand. <strong>Thromblo</strong> continues as an active contributor to ongoing development and maintenance of the Bot. Ownership and support inquiries are routed to AestheticSpartan and the ThrombloCreates team; technical contributions and historical context may still involve Thromblo.</p>
+        <h2>2. Ownership &amp; Maintenance</h2>
+        <p>TackleBot is owned and maintained by <strong>AestheticSpartan</strong>. The TackleBot name, branding, original artwork, collectible egg designs, pet designs, and related original assets are the property of AestheticSpartan. Ownership and support inquiries are routed to AestheticSpartan via the official support server.</p>
+        <p>TackleBot also makes use of third-party assets that are <strong>not</strong> owned by AestheticSpartan. These include assets licensed or purchased through marketplaces and resource sites such as <strong>itch.io</strong> and the <strong>Unity Asset Store</strong>, as well as content created or contributed by members of the community. All such assets remain the property of their respective creators and are used under their applicable licenses. No ownership of third-party assets is claimed.</p>
 
-        <h2>3. Closed License & Intellectual Property</h2>
-        <p>All created products, source code, and assets are owned by <strong>ThrombloCreates</strong>. You are not allowed to replicate or use this codebase unless specified otherwise or as a contributor in the GitHub repository. Development of the Bot is accelerated by AI models such as <strong>Claude (Anthropic)</strong> and <strong>Kimi (Moonshot AI)</strong>; any AI-assisted output produced for the Bot remains the intellectual property of ThrombloCreates.</p>
-
-        <h2>4. Third-Party Services</h2>
-        <p>The Bot integrates with and utilizes the following third-party services and APIs to provide certain features. Your use of these features is also subject to the terms and policies of these third parties:</p>
+        <h2>3. Third-Party Services</h2>
+        <p>The Bot integrates with the following third-party services and APIs. Your use of related features is also subject to the terms and policies of these third parties:</p>
         <ul>
             <li><strong>Discord API:</strong> Essential for all Bot operations within the Discord platform. Governed by Discord's Terms of Service and Privacy Policy.</li>
-            <li><strong>Google Generative AI (Gemini):</strong> Used for various <code>/fun</code> subcommands and the <code>/summary</code> command. Governed by Google's AI Principles and Privacy Policy.</li>
-            <li><strong>Popcat API:</strong> Used for various <code>/fun</code> subcommands (e.g., <code>fact</code>, <code>joke</code>, <code>imdb</code>, <code>sadcat</code>, <code>oogway</code>, <code>communist</code>, <code>whowouldwin</code>, <code>lulcat</code>, <code>opinion</code>, <code>ship</code>, <code>biden</code>, <code>pikachu</code>, <code>mock</code>, <code>8ball</code>).</li>
-            <li><strong>Noodles Wrapper (French Noodles API):</strong> Used for other <code>/fun</code> subcommands (e.g., <code>meme</code>, <code>achievement</code>, <code>changemymind</code>, <code>awkwardmonkey</code>, <code>blur</code>, <code>burnpaper</code>, <code>drake</code>, <code>wide</code>, <code>uglyupclose</code>).</li>
-            <li><strong>Top.gg API & Webhooks:</strong> Used to track votes, manage streaks, and distribute rewards.</li>
+            <li><strong>Top.gg API &amp; Webhooks:</strong> Used to track votes, manage streaks, and distribute rewards.</li>
+            <li><strong>Supabase (PostgreSQL hosting):</strong> Used to store persistent bot data.</li>
+            <li><strong>Patreon &amp; Ko-fi:</strong> Used to process voluntary contributions and supply supporter role information.</li>
         </ul>
 
-        <h2>5. Compliance Requirements</h2>
-        <h3>5.1 Discord Terms of Service & Community Guidelines</h3>
+        <h2>4. Compliance Requirements</h2>
+        <h3>4.1 Discord Terms of Service &amp; Community Guidelines</h3>
         <p>You must adhere to Discord's Terms of Service and Community Guidelines at all times while interacting with the Bot. This includes, but is not limited to, prohibitions against harassment, hate speech, spam, and the distribution of harmful or illegal content.</p>
+        <h3>4.2 Third-Party Service Terms</h3>
+        <p>When using features that rely on the third-party services listed in Section 3, you must also comply with their respective terms and policies (e.g. Top.gg, Patreon, Ko-fi).</p>
 
-        <h3>5.2 Third-Party Service Terms</h3>
-        <p>When using features that rely on the third-party services listed in Section 4, you must also comply with their respective terms and policies (e.g., Google AI, Popcat, Noodles, Top.gg). This includes restrictions on generating harmful content, overloading services, and respecting intellectual property.</p>
-
-        <h2>6. User Conduct</h2>
+        <h2>5. User Conduct</h2>
         <p>When using TackleBot, you agree <strong>not</strong> to:</p>
         <ul>
-            <li>Engage in harassment, abuse, threats, or harmful behavior towards other users or the developers.</li>
+            <li>Engage in harassment, abuse, threats, or harmful behavior towards other users or the developer.</li>
             <li>Distribute spam, unauthorized advertising, illegal materials, or content that infringes intellectual property.</li>
             <li>Attempt to gain unauthorized access to the Bot's systems, data, or source code.</li>
             <li>Interfere with, disrupt, or impair the Bot's operation, stability, or security.</li>
-            <li>Misuse moderation commands (<code>/kick</code>, <code>/ban</code>, <code>/clear</code>, <code>/moderator</code>, <code>/log</code>, <code>/fishwhitelist</code>) or channel management features (<code>/createchannel</code>, <code>/deletechannel</code>).</li>
-            <li>Attempt to exploit, automate (botting), or manipulate the fishing game (<code>/fish</code>), gambling (<code>/fish gamble</code>), achievement system, fishing company system, leaderboard rewards, or any other game feature.</li>
-            <li>Attempt to circumvent or interfere with the anti-bot verification system. Providing false responses during verification is prohibited.</li>
-            <li>Submit false, misleading, or malicious information through the bug reporting system (<code>/bug</code>).</li>
+            <li>Exploit, automate (botting), macro, or otherwise manipulate the collecting, economy, gambling, market, pet, farming, achievement, or leaderboard systems.</li>
+            <li>Abuse bugs, duplication glitches, or unintended behavior instead of reporting them.</li>
+            <li>Use multiple accounts to gain an unfair advantage in any game system, including votes and supporter rewards.</li>
         </ul>
-        <p>Violation of these conduct rules may result in temporary or permanent restrictions from using the Bot, reporting to Discord, or other actions deemed necessary by the development team or server administrators.</p>
+        <p>Violation of these conduct rules may result in temporary or permanent restrictions from using the Bot, data wipes, reporting to Discord, or other actions deemed necessary by the developer or server administrators.</p>
 
-        <h2>7. Data Usage and Privacy</h2>
-        <p>The Bot collects and processes data necessary to function and provide its features. This includes User IDs, Server IDs, game progress (fishing, achievements, companies, voting, challenges), and temporarily processes content for specific commands like <code>/fun</code>.</p>
-        <p>Your privacy is important to us. By using the Bot, you consent to the data practices described in our <strong>Privacy Policy</strong>. Please review it carefully for detailed information on what data we collect, how it's used, how long it's stored, your rights, our use of third-party services, and how AI is utilized in the development and enhancement of our services.</p>
+        <h2>6. Data Usage and Privacy</h2>
+        <p>The Bot collects and processes data necessary to function and provide its features. This includes User IDs, Server IDs, and game progress (collection, economy, pets, farming, skills, achievements, voting, supporter status).</p>
+        <p>Your privacy is important to us. By using the Bot, you consent to the data practices described in our <strong>Privacy Policy</strong>. Please review it carefully for detailed information on what data we collect, how it's used, how long it's stored, your rights, and our use of third-party services.</p>
 
-        <h2>8. Feature-Specific Terms</h2>
-        <h3>8.1 Fishing Game</h3>
-        <p>The fishing game (<code>/fish</code> command and its subcommands) involves collecting virtual fish, managing an inventory, purchasing upgrades, participating in challenges, earning achievements, and potentially managing a fishing company.</p>
-        <p>All game progress is tied to your Discord User ID.</p>
+        <h2>7. Feature-Specific Terms</h2>
+        <h3>7.1 Collecting &amp; Economy</h3>
+        <p>The collecting game (<code>/collect</code> and related commands) involves claiming spawned items, managing an inventory, earning and banking Gold, and trading on the marketplace. All progress is tied to your Discord User ID.</p>
+        <h3>7.2 Gambling Features</h3>
+        <p>Gambling commands (e.g. <code>/blackjack</code>, <code>/roulette</code>, <code>/highlow</code>, <code>/kiosk</code>) use virtual in-game currency only. They involve no real-world money and have no monetary value. They are provided for entertainment within the game economy.</p>
+        <h3>7.3 Voting (<code>/vote</code>) &amp; Top.gg Integration</h3>
+        <p>Voting for the Bot on Top.gg is optional but appreciated. Voting rewards (e.g. Voter Chests) are granted based on successful vote validation via the Top.gg webhook. You may receive DM reminders to vote; these can be disabled via <code>/settings</code> or provided buttons.</p>
 
-        <h3>8.2 Voting (<code>/vote</code>) & Top.gg Integration</h3>
-        <p>Voting for the Bot on Top.gg is optional but appreciated.</p>
-        <p>Voting rewards (e.g., Voter Chests) are granted based on successful vote validation via the Top.gg webhook.</p>
-        <p>You may receive DM reminders to vote; these can be disabled via buttons provided in the DM or vote command response.</p>
-
-        <h2>9. Payments & Refunds</h2>
+        <h2>8. Payments &amp; Refunds</h2>
         <p>Voluntary support for the Bot may be offered through <strong>Patreon</strong> and <strong>Ko-fi</strong>. By contributing through either platform, you acknowledge and agree that:</p>
         <ul>
-            <li><strong>No refunds are issued by ThrombloCreates, AestheticSpartan, or the TackleBot development team</strong> for any Patreon or Ko-fi contributions, pledges, tips, or one-time donations.</li>
-            <li>Any refund request must be initiated through <strong>Patreon's or Ko-fi's own refund channels</strong> and is subject to those platforms' policies, eligibility rules, and timelines. Neither ThrombloCreates nor AestheticSpartan can process, approve, or override refund decisions on behalf of those platforms.</li>
+            <li><strong>No refunds are issued by AestheticSpartan</strong> for any Patreon or Ko-fi contributions, pledges, tips, or one-time donations.</li>
+            <li>Any refund request must be initiated through <strong>Patreon's or Ko-fi's own refund channels</strong> and is subject to those platforms' policies, eligibility rules, and timelines. AestheticSpartan cannot process, approve, or override refund decisions on behalf of those platforms.</li>
             <li>Contributions are entirely voluntary and do not grant any ownership stake, equity, or intellectual-property rights in the Bot or its assets.</li>
-            <li>Contributions do not entitle the contributor to guaranteed features, service levels, response times, or any specific outcomes related to the Bot.</li>
+            <li>Supporter perks are virtual, may change over time, and do not entitle the contributor to guaranteed features, service levels, response times, or specific outcomes.</li>
         </ul>
 
-        <h2>10. Disclaimer of Warranty</h2>
-        <p>The Bot is provided "AS IS" and "AS AVAILABLE" without warranty of any kind, express or implied. This includes, but is not limited to, warranties of merchantability, fitness for a particular purpose, availability, security, accuracy, or non-infringement. The developers do not guarantee that the Bot will be error-free, uninterrupted, or meet your specific requirements.</p>
+        <h2>9. Disclaimer of Warranty</h2>
+        <p>The Bot is provided "AS IS" and "AS AVAILABLE" without warranty of any kind, express or implied. This includes, but is not limited to, warranties of merchantability, fitness for a particular purpose, availability, security, accuracy, or non-infringement. The developer does not guarantee that the Bot will be error-free, uninterrupted, or meet your specific requirements.</p>
 
-        <h2>11. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, in no event shall ThrombloCreates, AestheticSpartan, or the TackleBot development team be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, goodwill, or other intangible losses, resulting from:</p>
+        <h2>10. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, in no event shall AestheticSpartan be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, goodwill, or other intangible losses, resulting from:</p>
         <ul>
             <li>Your access to or use of, or inability to access or use, the Bot.</li>
             <li>Any conduct or content of any third party on the service.</li>
             <li>Unauthorized access, use, or alteration of your transmissions or content.</li>
-            <li>Any errors, bugs, or inaccuracies in the Bot's operation.</li>
+            <li>Any errors, bugs, or inaccuracies in the Bot's operation, including loss of in-game progress or virtual items.</li>
         </ul>
 
-        <h2>12. Changes to Terms</h2>
-        <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes, typically via the <code>/announce</code> command or by updating the "Last updated" date below. Your continued use of the Bot after such changes constitutes your acceptance of the revised Terms.</p>
+        <h2>11. Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes, typically via in-bot announcements or by updating the "Last updated" date below. Your continued use of the Bot after such changes constitutes your acceptance of the revised Terms.</p>
 
-        <h2>13. Termination</h2>
+        <h2>12. Termination</h2>
         <p>We may terminate or suspend your access to the Bot immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Server administrators may also remove the Bot from their server at any time.</p>
 
-        <h2>14. Contact</h2>
-        <p>For questions about these Terms or the Bot's operation, please contact <strong>AestheticSpartan and the ThrombloCreates development team</strong> through the official Bot support server (link usually available via <code>/info</code> or <code>/help</code>) or visit our website:</p>
-        <p><a href="https://dryram3n.github.io/tacklebotwebsite" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite</a></p>
-        <p><strong>Last updated:</strong> May 16, 2026</p>
+        <h2>13. Contact</h2>
+        <p>For questions about these Terms or the Bot's operation, please contact <strong>AestheticSpartan</strong> through the official Bot support server (link usually available via <code>/help</code> or <code>/info</code>) or visit our website:</p>
+        <p><a href="https://dryram3n.github.io/tacklebotwebsite/" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite/</a></p>
+        <p><strong>Last updated:</strong> May 28, 2026</p>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
+        <p>&copy; 2025 TackleBot. Owned by AestheticSpartan &middot; Credits to Thromblo.</p>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
 </html>

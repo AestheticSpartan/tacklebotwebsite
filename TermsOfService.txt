@@ -1,18 +1,18 @@
 Terms of Service for TackleBot Discord Bot
-Created by ThrombloCreates
+Created by AestheticSpartan
 
-**Ownership Notice:** TackleBot is now owned and operated by **AestheticSpartan** under the **ThrombloCreates** brand. **Thromblo** remains an active contributor to the project. See Section 2 for full details.
+**Ownership Notice:** TackleBot is owned and operated by **AestheticSpartan**. See Section 2 for full details.
 
 1. Introduction
-By adding or interacting with the TackleBot Discord Bot ("the Bot", "we", "us", "our"), operated by AestheticSpartan under the ThrombloCreates brand, in a Discord server or via direct message, you agree to comply with these Terms of Service ("Terms") and our Privacy Policy. These Terms govern your access to and use of the Bot, including all features, commands, updates, and related services.
+By adding or interacting with the TackleBot Discord Bot ("the Bot", "we", "us", "our"), operated by AestheticSpartan, in a Discord server or via direct message, you agree to comply with these Terms of Service ("Terms") and our Privacy Policy. These Terms govern your access to and use of the Bot, including all features, commands, updates, and related services.
 
 Visit our website for more information: https://dryram3n.github.io/tacklebotwebsite/terms-of-service.html
 
 2. Ownership & Maintenance
-As of May 16, 2026, TackleBot is owned by **AestheticSpartan**. All source code, products, assets, and intellectual property related to the Bot are held under the **ThrombloCreates** brand. **Thromblo** continues as an active contributor to ongoing development and maintenance of the Bot. Ownership and support inquiries are routed to AestheticSpartan and the ThrombloCreates team; technical contributions and historical context may still involve Thromblo.
+As of May 16, 2026, TackleBot is owned by **AestheticSpartan**. All source code, products, assets, and intellectual property related to the Bot are owned by **AestheticSpartan**. Ownership and support inquiries are routed to AestheticSpartan.
 
 3. Closed License & Intellectual Property
-All created products, source code, and assets are owned by **ThrombloCreates**. You are not allowed to replicate or use this codebase unless specified otherwise or as a contributor in the GitHub repository. Development of the Bot is accelerated by AI models such as **Claude (Anthropic)** and **Kimi (Moonshot AI)**; any AI-assisted output produced for the Bot remains the intellectual property of ThrombloCreates.
+All created products, source code, and assets are owned by **AestheticSpartan**. You are not allowed to replicate or use this codebase unless specified otherwise or as a contributor in the GitHub repository. Development of the Bot is accelerated by AI models such as **Claude (Anthropic)** and **Kimi (Moonshot AI)**; any AI-assisted output produced for the Bot remains the intellectual property of AestheticSpartan.
 
 4. Third-Party Services
 The Bot integrates with and utilizes the following third-party services and APIs to provide certain features. Your use of these features is also subject to the terms and policies of these third parties:
@@ -64,8 +64,8 @@ Your privacy is important to us. By using the Bot, you consent to the data pract
 9. Payments & Refunds
 Voluntary support for the Bot may be offered through **Patreon** and **Ko-fi**. By contributing through either platform, you acknowledge and agree that:
 
-*   **No refunds are issued by ThrombloCreates, AestheticSpartan, or the TackleBot development team** for any Patreon or Ko-fi contributions, pledges, tips, or one-time donations.
-*   Any refund request must be initiated through **Patreon's or Ko-fi's own refund channels** and is subject to those platforms' policies, eligibility rules, and timelines. Neither ThrombloCreates nor AestheticSpartan can process, approve, or override refund decisions on behalf of those platforms.
+*   **No refunds are issued by AestheticSpartan or the TackleBot development team** for any Patreon or Ko-fi contributions, pledges, tips, or one-time donations.
+*   Any refund request must be initiated through **Patreon's or Ko-fi's own refund channels** and is subject to those platforms' policies, eligibility rules, and timelines. AestheticSpartan cannot process, approve, or override refund decisions on behalf of those platforms.
 *   Contributions are entirely voluntary and do not grant any ownership stake, equity, or intellectual-property rights in the Bot or its assets.
 *   Contributions do not entitle the contributor to guaranteed features, service levels, response times, or any specific outcomes related to the Bot.
 
@@ -73,7 +73,7 @@ Voluntary support for the Bot may be offered through **Patreon** and **Ko-fi**. 
 The Bot is provided "AS IS" and "AS AVAILABLE" without warranty of any kind, express or implied. This includes, but is not limited to, warranties of merchantability, fitness for a particular purpose, availability, security, accuracy, or non-infringement. The developers do not guarantee that the Bot will be error-free, uninterrupted, or meet your specific requirements.
 
 11. Limitation of Liability
-To the maximum extent permitted by law, in no event shall ThrombloCreates, AestheticSpartan, or the TackleBot development team be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, goodwill, or other intangible losses, resulting from:
+To the maximum extent permitted by law, in no event shall AestheticSpartan or the TackleBot development team be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, goodwill, or other intangible losses, resulting from:
 
 *   Your access to or use of, or inability to access or use, the Bot.
 *   Any conduct or content of any third party on the service.
@@ -87,7 +87,7 @@ We reserve the right to modify these Terms at any time. We will notify users of 
 We may terminate or suspend your access to the Bot immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Server administrators may also remove the Bot from their server at any time.
 
 14. Contact
-For questions about these Terms or the Bot's operation, please contact **AestheticSpartan and the ThrombloCreates development team** through the official Bot support server (link usually available via `/info` or `/help`) or visit our website:
+For questions about these Terms or the Bot's operation, please contact **AestheticSpartan** through the official Bot support server (link usually available via `/info` or `/help`) or visit our website:
 
 https://dryram3n.github.io/tacklebotwebsite
 

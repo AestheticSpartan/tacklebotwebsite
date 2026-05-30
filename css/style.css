@@ -1272,3 +1272,95 @@ body.easter-egg-active {
         animation: none;
     }
 }
+
+/* ---- Supporter tiers (donate) + under-construction (shop) ---- */
+.btn-crimson {
+    background: linear-gradient(135deg, var(--secondary-color), #0b3a4d);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(18, 91, 120, 0.35);
+}
+
+.tier-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-small);
+    border: 1px solid var(--glass-border);
+    margin-bottom: 14px;
+}
+
+.donation-card .tier-desc {
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+}
+
+.donation-card h4.perk-group {
+    font-family: 'GlitchFont', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 18px 0 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.donation-card h4.perk-group:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.perks.coming li { opacity: 0.82; }
+.perks.coming li::before { content: '·'; font-size: 1.2em; line-height: 1; }
+
+.tier-flag {
+    display: inline-block;
+    margin: 4px 0 10px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(76, 201, 240, 0.16);
+    border: 1px solid rgba(76, 201, 240, 0.4);
+    color: var(--primary-color);
+    font-family: 'GlitchFont', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.tier-note {
+    color: var(--muted-text);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 12px;
+}
+
+.under-construction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    min-height: 42vh;
+    justify-content: center;
+}
+
+.under-construction .uc-emoji {
+    font-size: clamp(3rem, 9vw, 5rem);
+    line-height: 1;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
+.under-construction h2 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: var(--accent-color);
+}
+
+.under-construction p {
+    max-width: 560px;
+    color: var(--muted-text);
+    line-height: 1.75;
+}

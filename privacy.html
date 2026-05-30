@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - TackleBot</title>
-    <meta name="description" content="Review TackleBot's privacy policy, including what data is collected, how it is used, and how users can request deletion.">
+    <meta name="description" content="Review TackleBot's privacy policy, including what data is collected, how it is used and stored, and how users can request deletion.">
 
     <!-- Open Graph / Link Preview -->
     <meta property="og:title" content="Privacy Policy - TackleBot">
@@ -19,7 +19,6 @@
 <body class="page page-privacy">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scanlines"></div>
-    <div id="subliminal-layer"><div id="subliminal-text"></div></div>
     <div id="fish-tank"></div>
 
     <header class="site-header">
@@ -45,72 +44,66 @@
         <header class="page-intro page-intro-compact legal-header">
             <p class="eyebrow">Policies and storage practices</p>
             <h1>Privacy Policy</h1>
-            <p><strong>Last Updated:</strong> May 16, 2026</p>
+            <p><strong>Last Updated:</strong> May 28, 2026</p>
         </header>
 
         <h2>Introduction</h2>
-        <p>This Privacy Policy outlines how TackleBot Discord Bot ("the Bot", "we", "us", "our") collects, uses, stores, and protects user data when you interact with our service. <strong>Ownership Notice:</strong> TackleBot is owned and operated by <strong>AestheticSpartan</strong> under the <strong>ThrombloCreates</strong> brand, with <strong>Thromblo</strong> continuing as an active contributor. By using the Bot, you consent to the data practices described in this policy.</p>
-
-        <h2>Ownership & Maintenance</h2>
-        <p>As of May 16, 2026, TackleBot is owned by <strong>AestheticSpartan</strong>. All source code, products, and intellectual property of the Bot are held under the <strong>ThrombloCreates</strong> brand. <strong>Thromblo</strong> continues as an active contributor to ongoing development and maintenance. For the purposes of this policy, data controller responsibilities sit with <strong>ThrombloCreates / AestheticSpartan</strong>.</p>
+        <p>This Privacy Policy outlines how the TackleBot Discord Bot ("the Bot", "TackleBot", "we", "us", "our") collects, uses, stores, and protects user data when you interact with our service. <strong>Ownership Notice:</strong> TackleBot is owned and operated by <strong>AestheticSpartan</strong>. By using the Bot, you consent to the data practices described in this policy.</p>
 
         <h2>Data Collection</h2>
         <p>The Bot collects and processes the following data to provide its services:</p>
 
-        <h3>1. User Information</h3>
+        <h3>1. User &amp; Server Information</h3>
         <ul>
-            <li><strong>Discord User IDs:</strong> Used for game features, settings, moderation, channel creation, voting, whitelisting, bug reports, and command interactions.</li>
-            <li><strong>Discord Server (Guild) IDs:</strong> Used for server-specific settings, moderation tools, channel creation, logging configuration, and command interactions.</li>
-            <li><strong>Command Interaction History:</strong> Basic information about which commands are used, by whom, and in which servers. Used to deliver functionality and improve features.</li>
+            <li><strong>Discord User IDs:</strong> Used for collecting, inventory, economy, leveling, pets, achievements, settings, voting, moderation of game features, and command interactions.</li>
+            <li><strong>Discord Server (Guild) IDs:</strong> Used for per-server configuration such as spawn channels, announce channels, ping roles, and reaction roles.</li>
+            <li><strong>Command Interaction History:</strong> Basic information about which commands are used, by whom, and in which servers, used to deliver functionality and improve features.</li>
         </ul>
 
-        <h3>2. Game and Feature Data</h3>
+        <h3>2. Game &amp; Feature Data</h3>
         <ul>
-            <li><strong>Fishing Game Data:</strong> Player statistics (level, XP, total catches, earnings, rarity counts, biggest fish, etc.), fish inventory, upgrade levels (luck, speed, multicatch, inventory, value, explorer), research progress, challenge progress, preferred fishing locations, and fishing company data (boats, upgrades, earnings). Stored with your User ID.</li>
-            <li><strong>Gamble Data:</strong> Gambling statistics such as consecutive wins/losses. Stored with your User ID.</li>
-            <li><strong>Achievement Data:</strong> Progress and completion status for in-game achievements. Stored with your User ID.</li>
+            <li><strong>Collection Data:</strong> Your collected items, inventory contents, collection progress, favorites, and wishlist. Stored with your User ID.</li>
+            <li><strong>Economy Data:</strong> Gold wallet and bank balances, bank upgrade level, P-Coins, transaction history, gambling statistics, and marketplace listings/trades. Stored with your User ID.</li>
+            <li><strong>Progression Data:</strong> Account level and XP, skill levels and skill XP, achievements, badges, titles, daily/weekly/monthly streaks, and active buffs. Stored with your User ID.</li>
+            <li><strong>Pet Data:</strong> Hatched pets, hatchery/hospital/workstation state, pet battle records and arena rankings, and pet inventory. Stored with your User ID.</li>
+            <li><strong>Farming Data:</strong> Farm plots, crops, and growth state. Stored with your User ID.</li>
+            <li><strong>Settings &amp; Cooldowns:</strong> Per-user preferences (spawn pings, DM reminders, profile customisation) and command cooldown timestamps.</li>
         </ul>
 
-        <h3>3. Content Data (Mostly Temporary)</h3>
-        <ul>
-            <li><code>/summary</code>: Recent public channel messages are sent to Google Generative AI (Gemini) to generate a summary. The Bot does not permanently store this content.</li>
-            <li><code>/fun</code> (Text): User-provided text for commands such as <code>achievement</code>, <code>changemymind</code>, <code>awkwardmonkey</code>, <code>burnpaper</code>, <code>drake</code>, <code>sadcat</code>, <code>oogway</code>, <code>biden</code>, <code>pikachu</code>, <code>mock</code>, <code>lulcat</code>, <code>opinion</code>, <code>imdb</code>, and <code>8ball</code> is sent to Popcat or Noodles APIs for processing and not stored long-term.</li>
-            <li><code>/fun</code> (Images): Uploaded images or URLs for commands such as <code>blur</code>, <code>wide</code>, <code>uglyupclose</code>, <code>communist</code>, <code>whowouldwin</code>, <code>ship</code>, and <code>opinion</code> are sent to the relevant third-party API for processing.</li>
-            <li><code>/announce</code>: Announcement content is processed temporarily.</li>
-        </ul>
-
-        <h3>4. Vote Data (via Top.gg)</h3>
+        <h3>3. Vote Data (via Top.gg)</h3>
         <ul>
             <li>When you vote on Top.gg, we receive your Discord User ID via a webhook.</li>
             <li>We store your User ID, the timestamp of your last vote, your current vote streak, and your preference for vote reminders. Stored persistently until data deletion is requested.</li>
         </ul>
 
+        <h3>4. Supporter (Patreon &amp; Ko-fi) Data</h3>
+        <ul>
+            <li>When Patreon links your supporter role to Discord, we detect your tier via your Discord role(s) and store your tier, associated role and guild IDs, and reward markers (welcome and weekly stipend tracking) so rewards are granted correctly and not duplicated.</li>
+            <li>Reward grants are recorded in an append-only reward log tied to your User ID for accounting and support.</li>
+        </ul>
+
         <h2>How We Use Your Data</h2>
         <p>Your data is used solely to:</p>
         <ul>
-            <li>Provide core bot functionality (commands, interactions, moderation, channel creation).</li>
-            <li>Manage game systems (fishing progress, inventory, upgrades, currency, challenges, achievements, companies, gambling features).</li>
-            <li>Generate summaries via Google Gemini when requested.</li>
-            <li>Generate fun content via Popcat and Noodles APIs for <code>/fun</code> commands.</li>
+            <li>Provide core bot functionality (commands, spawns, interactions, configuration).</li>
+            <li>Manage game systems (collection, inventory, economy, banking, gambling, pets, farming, skills, achievements, marketplace).</li>
             <li>Track votes, calculate streaks, award Voter Chests, and send reminders.</li>
-            <li>Store and manage bug reports.</li>
-            <li>Calculate weekly leaderboards and distribute rewards.</li>
+            <li>Detect supporter tiers and distribute the correct Patreon/Ko-fi rewards.</li>
+            <li>Calculate leaderboards and distribute rewards.</li>
             <li>Improve Bot functionality by analyzing aggregated, anonymized usage data.</li>
         </ul>
 
         <h2>Data Storage and Security</h2>
+        <h3>Where Data Is Stored</h3>
+        <p>Persistent data is stored in a <strong>PostgreSQL database hosted on Supabase</strong>. Static game catalogs (items, achievements, useables) are defined in configuration and mirrored into the database.</p>
         <h3>Duration of Storage</h3>
         <ul>
-            <li><strong>Game Data:</strong> Stored indefinitely until cleared by the user or a deletion request.</li>
-            <li><strong>Vote Data:</strong> Stored indefinitely until deletion is requested.</li>
-            <li><strong>Bug Reports:</strong> Stored until resolved or closed.</li>
-            <li><strong>Summary & Fun Content:</strong> Processed temporarily by third-party APIs; not stored permanently.</li>
-            <li><strong>Channel Creator & Anti-Bot Data:</strong> Stored temporarily for operational needs.</li>
+            <li><strong>Game &amp; Economy Data:</strong> Stored indefinitely until cleared by the user or a deletion request.</li>
+            <li><strong>Vote &amp; Supporter Data:</strong> Stored indefinitely until deletion is requested.</li>
+            <li><strong>Spawn State:</strong> Stored temporarily for operational needs and cleaned up on restart.</li>
         </ul>
-
         <h3>Backup System</h3>
-        <p>The Bot maintains automated backups of persistent user data (fishing stats, vote data, company data, etc.). Backups are created regularly (about every 30 minutes) and a limited number of recent backups (for example, the last three) are retained for disaster recovery.</p>
-
+        <p>The Bot maintains backups of persistent user data for disaster recovery. A limited number of recent backups are retained.</p>
         <h3>Data Security</h3>
         <p>We implement reasonable technical and administrative security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. No online service can be 100% secure.</p>
 
@@ -118,41 +111,33 @@
         <p>The Bot utilizes third-party services that may process your data:</p>
         <ul>
             <li><strong>Discord API:</strong> Required for all bot interactions. Subject to Discord's Privacy Policy.</li>
-            <li><strong>Google Generative AI (Gemini):</strong> Model <code>gemini-2.0-flash</code> used solely for the <code>/summary</code> command. Subject to Google's AI Principles and Privacy Policy.</li>
-            <li><strong>Popcat API:</strong> Handles various <code>/fun</code> subcommands (e.g., <code>fact</code>, <code>joke</code>, <code>imdb</code>, <code>sadcat</code>, <code>oogway</code>, <code>communist</code>, <code>whowouldwin</code>, <code>lulcat</code>, <code>opinion</code>, <code>ship</code>, <code>biden</code>, <code>pikachu</code>, <code>mock</code>, <code>8ball</code>).</li>
-            <li><strong>Noodles Wrapper (French Noodles API):</strong> Handles other <code>/fun</code> subcommands (e.g., <code>meme</code>, <code>achievement</code>, <code>changemymind</code>, <code>awkwardmonkey</code>, <code>blur</code>, <code>burnpaper</code>, <code>drake</code>, <code>wide</code>, <code>uglyupclose</code>).</li>
-            <li><strong>Top.gg API & Webhooks:</strong> Tracks votes, streaks, and rewards.</li>
+            <li><strong>Top.gg API &amp; Webhooks:</strong> Tracks votes, streaks, and rewards. Subject to Top.gg's policies.</li>
+            <li><strong>Supabase (PostgreSQL hosting):</strong> Stores persistent bot data. Subject to Supabase's privacy and security policies.</li>
+            <li><strong>Patreon &amp; Ko-fi:</strong> Process voluntary contributions and, in Patreon's case, supply supporter role information via Discord. Subject to their respective privacy policies.</li>
         </ul>
 
         <h2>Your Rights</h2>
         <p>You have the right to:</p>
         <ul>
-            <li>Request access to stored game data (for example via <code>/fish stats</code>).</li>
-            <li>Request deletion of your game data (contact the development team or use available commands).</li>
-            <li>Disable vote reminders through provided buttons.</li>
+            <li>Request access to stored game data (for example via <code>/profile</code>, <code>/inventory</code> and <code>/checkprogress</code>).</li>
+            <li>Request deletion of your game data (contact the development team).</li>
+            <li>Disable vote and cooldown reminders through <code>/settings</code> or provided buttons.</li>
             <li>Opt out by removing the Bot from your server or discontinuing use.</li>
             <li>Contact us with questions or concerns about your data.</li>
         </ul>
 
         <h2>Data Deletion</h2>
         <ul>
-            <li>Fishing, gamble, achievement, and company data can be deleted upon request.</li>
-            <li>Server administrators can remove users from moderator lists, fishing whitelists, or logging configurations.</li>
-            <li>Users can delete channels they created (if permitted); admins/mods may also delete them. Channel creator data follows automated cleanup.</li>
-            <li>Vote reminder preferences can be updated via buttons; full vote history deletion requires contacting the development team.</li>
-            <li>Disabling logging stops future event logging and removes stored log channel configuration.</li>
+            <li>Collection, economy, pet, farming, achievement, and progression data can be deleted upon request.</li>
+            <li>Server administrators can manage per-guild configuration (spawn channels, ping roles, reaction roles, premium channels).</li>
+            <li>Vote and reminder preferences can be updated via <code>/settings</code> or buttons; full vote history deletion requires contacting the development team.</li>
         </ul>
 
-        <h2>AI in Development and Service Enhancement</h2>
-        <p>To aid in the development, maintenance, and improvement of TackleBot, <strong>ThrombloCreates</strong> leverages artificial intelligence (AI) tools and models from multiple providers, including <strong>Anthropic (Claude)</strong> and <strong>Moonshot AI (Kimi)</strong>, as well as Google (e.g., Gemini models). These technologies are primarily used for:</p>
-        <ul>
-            <li><strong>Software Development:</strong> Assisting with code generation, analysis, refactoring, and optimization for the Bot's codebase.</li>
-            <li><strong>Operational Support:</strong> Helping to create documentation, identify areas for service improvement, or generate non-user-specific content.</li>
-        </ul>
-        <p>Any code, assets, or other deliverables produced with AI assistance for the Bot remain the intellectual property of <strong>ThrombloCreates</strong>. The use of AI for these internal purposes is aimed at enhancing the quality and efficiency of the Bot. Any AI-powered features that directly process user data, such as the <code>/summary</code> command's use of Google Gemini, are explicitly detailed within the 'Data Collection' and 'Third-Party Services' sections of this policy.</p>
+        <h2>AI in Development</h2>
+        <p>To aid in the development, maintenance, and improvement of TackleBot, AestheticSpartan may use artificial intelligence (AI) tools to assist with code generation, analysis, refactoring, and documentation. Any code or assets produced with AI assistance for the Bot remain the intellectual property of AestheticSpartan. TackleBot does not send your personal data to AI services as part of normal gameplay.</p>
 
         <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Significant changes will be communicated by updating this page and potentially via in-bot announcements (for example, using <code>/announce</code>).</p>
+        <p>We may update this Privacy Policy from time to time. Significant changes will be communicated by updating this page and potentially via in-bot announcements.</p>
 
         <h2>Legal Basis for Processing</h2>
         <ul>
@@ -162,19 +147,18 @@
         </ul>
 
         <h2>Contact Information</h2>
-        <p>For questions about this Privacy Policy or your data, please contact the <strong>ThrombloCreates development team, led by AestheticSpartan (with continued contributions from Thromblo)</strong>, through:</p>
+        <p>For questions about this Privacy Policy or your data, please contact <strong>AestheticSpartan</strong> through:</p>
         <ul>
-            <li>The official Bot support server (link usually available via <code>/info</code> or <code>/help</code>).</li>
-            <li>Our website: <a href="https://dryram3n.github.io/tacklebotwebsite/privacy-policy.html" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite/privacy-policy.html</a></li>
+            <li>The official Bot support server (link usually available via <code>/help</code> or <code>/info</code>).</li>
+            <li>Our website: <a href="https://dryram3n.github.io/tacklebotwebsite/privacy.html" target="_blank" rel="noopener">https://dryram3n.github.io/tacklebotwebsite/privacy.html</a></li>
         </ul>
 
         <p>By using TackleBot, you acknowledge that you have read and understand this Privacy Policy and agree to its terms.</p>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2025 TackleBot. Created by Thromblo.</p>
+        <p>&copy; 2025 TackleBot. Owned by AestheticSpartan &middot; Credits to Thromblo.</p>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
 </html>
